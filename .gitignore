@@ -1,3 +1,7 @@
 .vscode
+.history
 node_modules
-dist/styles/*
+.code
+.idea
+.DS_Store
+dist

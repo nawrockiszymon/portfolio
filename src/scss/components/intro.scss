@@ -3,29 +3,56 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  justify-self: ba;
+  padding-top: rem(15px);
+  padding-bottom: rem(15px);
+  box-sizing: border-box;
+  @include mq("sm") {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
   #{&}__lead {
     display: block;
   }
+
   #{&}__item {
     width: 100%;
+    @include mq("sm") {
+      text-align: center;
+    }
+
     &.intro__item--align {
       text-align: right;
+      @include mq("sm") {
+        text-align: center;
+      }
     }
   }
+
   #{&}__hdl {
-    @include paragraph(44px, $line-height: 1.4, $weight: "Bold");
+    margin-bottom: rem(22px);
+    @include hdl(44px, $line-height: 1.4, $weight: "Bold");
+    @include mq("sm") {
+      font-size: rem(32px);
+    }
   }
+
   #{&}__text {
+    margin-bottom: rem(30px);
     @include paragraph;
-    margin-bottom: rem(35px);
   }
+
   #{&}__avatar {
     width: 100%;
     height: auto;
     max-width: rem(243px);
     max-height: rem(243px);
-    border: rem(1px) solid $black;
+    box-shadow: -5px 13px 0 0 $secondary-light;
     border-radius: 50%;
+    @media screen and (max-width: rem(600px)) {
+      max-width: rem(170px);
+      max-height: rem(170px);
+      box-shadow: -3.5px 9px 0 0 $secondary-light;
+    }
   }
 }

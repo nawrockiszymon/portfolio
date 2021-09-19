@@ -7,11 +7,16 @@
   color: $dark;
   margin-right: rem(20px);
   margin-bottom: rem(20px);
+  @include mq("sm") {
+    width: 100%;
+    margin-right: 0;
+  }
   &:nth-child(even) {
     margin-right: 0;
   }
   #{&}__hdl {
     @include hdl(26px, 1.4, "Bold");
+    @in;
   }
 
   #{&}__addInfo {
